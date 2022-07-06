@@ -50,7 +50,7 @@ def get_content() -> list[dict]:
 
     finally:
         browser.close()
-        browser.quit
+        browser.quit()
 
 
 def init_webdriver() -> WebDriver:
@@ -89,10 +89,8 @@ def get_page_sources(browser: WebDriver, page_count: int) -> list[WebDriver.page
 
 def parse_content(page_sources: list[WebDriver.page_source]) -> list[dict]:
     """ Parses content from a page """
+    
     try:
-        if len(page_sources) > 5:
-            page_sources = page_sources[:5]
-
         items = []
         
         for page_source in page_sources:
